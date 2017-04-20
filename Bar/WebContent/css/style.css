@@ -1,0 +1,102 @@
+	*{
+		margin: 0;
+		padding: 0;
+
+	}
+
+	body{
+		background-color: #ddd;
+		font-family: 'Roboto Condensed';
+		background-image: url("../image/background.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	#div_tabs{
+	position: absolute;
+	background-color: #e54e43;
+	top: 80px;
+	margin: 40px 300px;
+	width:620px;
+	height:420px;
+	border-radius: 10px;	
+	}
+
+	.nav_tabs{
+		position: absolute;
+		width: 600px;
+		height: 350px;		
+		background-color: #e54e43;
+		display: block;
+		margin: 7px 7px;
+	}
+
+	.nav_tabs ul{
+		list-style: none;
+	}
+
+	.nav_tabs ul li{
+		float: left;
+	}
+
+	.tab_label{
+		display: block;
+		width: 250px;
+		background-color: #e54e43;
+		padding: 25px;
+		font-size: 20px;
+		color:#fff;
+		cursor: pointer;
+		text-align: center;
+		border-radius: 12px 10px 0 0;
+	}
+
+
+	.nav_tabs .radios{ 
+	display:none;
+	position: absolute;
+	}
+ 
+.nav_tabs .radios:checked ~ label { 
+	background-color:#363b48;
+	border-top: solid ;
+	border-color: #fff ;
+
+}
+
+
+.div-formulario{
+	display: none;
+	position: absolute;
+	height: 326px;
+	width: 600px;
+	left: 0;
+}
+
+.radios:checked ~ .div-formulario{
+	display: block;
+	background-color: #363b48;
+}
+
+
+.div-formulario fieldset{
+	    box-shadow: 2px 2px 2px gray;
+	    margin: 7px 7px;
+	    font-family: arial;
+	   
+	    color: white;
+}
+
+ .field{    
+    margin:5px 5px;
+    padding:4px;
+  }  
+ .field label{
+    width:60px;
+    display: inline-block;
+  }
+
+  .field input{
+    width:200px;
+    margin-left:15px;    
+  }	
