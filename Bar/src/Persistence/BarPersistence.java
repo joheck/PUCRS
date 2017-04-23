@@ -8,21 +8,21 @@ import java.util.ArrayList;
 import Business.Clientes;
 
 public class BarPersistence {
-	private final String diretorioArqClientesNoBar = "C:/Users/JOO_F/workspace/Bar/src/Persistence/Dados/clientesNoBar.txt";
-	private final String diretorioMovimentacaoDoBar = "C:/Users/JOO_F/workspace/Bar/src/Persistence/Dados/movimentacaoBar.txt";
+	private final String diretorioArqClientesNoBar = "C:/Users/JOO_F/git/PUCRS/Bar/src/Persistence/Dados/clientesNoBar.txt";
+	private final String diretorioMovimentacaoDoBar = "C:/Users/JOO_F/git/PUCRS/Bar/src/Persistence/Dados/movimentacaoBar.txt";
 	
 	/*Grava no arquivo de texto os arquivos que estao no ArrayList*/
 	public boolean atualizarArquivoClientesNobar(ArrayList<Clientes> clientes){
 		try{			
-			FileWriter file = new FileWriter(diretorioArqClientesNoBar);
-			PrintWriter pw = new PrintWriter(file);			
+			FileWriter localfile = new FileWriter(diretorioArqClientesNoBar);
+			PrintWriter pw = new PrintWriter(localfile);			
 
 			for(Clientes c : clientes){
 				if(c != null){
 					pw.println(c.toString());
 				}
 			}			
-			file.close();
+			localfile.close();
 			pw.close();	
 		}catch(Exception e){ 
 			System.out.println("Não foi possível salvar. Descrição do erro: ");
