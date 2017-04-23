@@ -1,17 +1,28 @@
 package Business;
 
-import Persistence.Clientes_Persistence;
-
-public class Clientes extends Clientes_Persistence{
+public class Clientes{
 	private String nome, cpf;
 	private int idade, numeroSocio;
 	private char genero;
 	
-	public Clientes(String nome, String cpf, int idade, char genero) {
+	public Clientes(String nome, String cpf, int idade, char genero, int numeroSocio) {
 		this.nome = nome;
 		this.cpf = cpf;
 		this.idade = idade;
 		this.genero = genero;
+		this.numeroSocio = numeroSocio;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public int getNumeroSocio() {
+		return numeroSocio;
 	}
 
 	public char getGenero() {
@@ -28,8 +39,8 @@ public class Clientes extends Clientes_Persistence{
 	
 	public String toString(){
 		
-		return "Nome: "+this.nome+" CPF: "+this.cpf+" Idade: "+this.idade+
-			   " Numero Socio: "+this.numeroSocio+" Gener: "+this.genero;
+		return "-"+this.nome+"|"+this.cpf+"|"+this.idade+
+			   "|"+this.numeroSocio+"|"+this.genero+"|"+this.numeroSocio+"-";
 	}
 
 }

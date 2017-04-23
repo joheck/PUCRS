@@ -1,7 +1,8 @@
 	*{
 		margin: 0;
 		padding: 0;
-
+		font-family: 'Arial';
+		color: white;
 	}
 
 	body{
@@ -15,17 +16,16 @@
 	#div_tabs{
 	position: absolute;
 	background-color: #e54e43;
-	top: 80px;
 	margin: 40px 300px;
 	width:620px;
-	height:420px;
+	height:320px;
 	border-radius: 10px;	
 	}
 
 	.nav_tabs{
 		position: absolute;
 		width: 600px;
-		height: 350px;		
+		height: 310px;		
 		background-color: #e54e43;
 		display: block;
 		margin: 7px 7px;
@@ -51,7 +51,6 @@
 		border-radius: 12px 10px 0 0;
 	}
 
-
 	.nav_tabs .radios{ 
 	display:none;
 	position: absolute;
@@ -61,21 +60,19 @@
 	background-color:#363b48;
 	border-top: solid ;
 	border-color: #fff ;
-
 }
-
 
 .div-formulario{
 	display: none;
 	position: absolute;
-	height: 326px;
+	height: 230px;
 	width: 600px;
 	left: 0;
 }
 
 .radios:checked ~ .div-formulario{
 	display: block;
-	background-color: #363b48;
+	background-color: #363b48;	
 }
 
 
@@ -98,5 +95,115 @@
 
   .field input{
     width:200px;
-    margin-left:15px;    
+    margin-left:15px;  
+    color: black;  
   }	
+
+   #submitButoon{
+  	width: 120px;
+  	height: 30px;
+
+  }
+
+  #radioTipo{
+  	padding: 10px;
+  	margin: 10px;
+  	border: solid;
+  	border-width: .2px;
+  	border-color: white;
+  }
+
+  #radioTipo label{
+  	margin: auto 11px;
+  }
+
+#tR{
+	text-align: center; 
+	margin-top: 8px;
+}
+
+#radioResult{
+	display: block;
+	padding: 8px;
+	margin: 5px 5px; 
+	border: solid;
+	border-color: white;
+	border-width: .2px;
+	height: auto;
+}
+
+#radioResult label{
+	margin-right: 23px;
+}
+
+#radioResult input{
+	color: white;
+}
+
+#radioResult #submit{
+	padding: 10px;
+	margin: 5px 5px;
+}
+
+#radioResult #submit{
+	width: 110px;
+	height: 40px;
+	color: black;
+	padding: 10px;
+	margin: 5px 5px;
+}
+
+#resultPCpf{
+	display: none;
+}
+
+#genero{
+	color: black;
+	margin-left: 14px;
+}
+
+#resultReport{
+	position: absolute;
+	display: block;
+	width: auto;
+	height: auto;
+	left: 400px;
+	top: 370px;
+	border: solid;
+	border-width: .2px;
+	border-color: gray;
+	padding: 4px 4px;
+	background-color: rgba(135, 135, 135, .7);
+	text-align: center;
+
+
+}
+
+#resultReport table{
+border: solid;
+border-color: white;
+background-color: black;
+}
+
+
+* thead{
+	background-color: rgba(235, 135, 135, .7);
+}
+
+#resultReport{
+	visibility: hidden;
+}
+
+#resultReport table{
+	visibility: hidden;
+}
+
+#tabelaDeResultados{
+	position: absolute;
+	left: 500px;
+	top: 20px;
+}
+
+
+
+	
