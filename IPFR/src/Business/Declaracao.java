@@ -3,7 +3,7 @@ package Business;
 public abstract class Declaracao {
 	private double contribuicao, totalRendimentos;
 
-	public Declaracao(double contribuicao, double totalRendimentos){
+	public Declaracao(double totalRendimentos, double contribuicao){
 		this.contribuicao = contribuicao;
 		this.totalRendimentos = totalRendimentos;
 	}
@@ -15,8 +15,8 @@ public abstract class Declaracao {
 
 	/*Metodo fornece o valor a ser subtraido da base de calculo*/
 	public double obterValorDescontoBaseCalculo(double baseCalculo, double porCentDesconto){
-		double desconto =  (baseCalculo * (porCentDesconto/100));
-		return desconto;
+		double porcentagem =  (porCentDesconto/100);
+		return baseCalculo * porcentagem;
 	}
 
 	/*Metodo fornece base de calculo considerando o desconto*/

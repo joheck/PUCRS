@@ -1,16 +1,17 @@
+import java.math.BigInteger;
+
 import Business.Declaracao;
 import Business.Simplificada;
-
+import javafx.*;
 
 public class Draft {
-	
-	public static void main(String[] args) {
-		double v1 = 100;
-		
-		Declaracao d = new Simplificada(2, 2);
-		d.
-		
-		System.out.println((double)50/100);
-	}
 
+
+	public static void main(String[] args) {
+		double bas = 100;
+		double por = 5;
+		por = ((double)por/100);
+		double result = por * bas;
+		System.out.println(result);
+	}
 }
