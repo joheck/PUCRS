@@ -6,28 +6,33 @@ public class Simplificada extends Declaracao {
 	}
 	
 	/*Valor de 5% de desconto estatico para o metodo dessa classe*/
-	public double obterValorDescontoBaseCalculo(double baseCalculo) {
-		return super.obterValorDescontoBaseCalculo(baseCalculo, 5);
-	}
-	
-	/*Valores absolutos para porcentagem. (5, 10, 20) correspondente a %*/
 	@Override
-	public double obterPorCentImposto(double baseCalculoComDesconto) {
-		double imposto = 0;
-		if(baseCalculoComDesconto <= 12000){
-			imposto = 0;
-		}else 
-			if(baseCalculoComDesconto > 12000 && baseCalculoComDesconto < 24000){
-			imposto = 15;
-		}else{
-			imposto = 27.5;
-		}
-		return imposto; 
-	}
+	 public double obterValorDescontoBaseCalculo() {
+		double desconto = 5.0;
+		System.out.println((obterBaseDeCalculo() * (desconto/100)));
+		return (obterBaseDeCalculo() * (desconto/100));		 
+	};
+	
+	/*Retorna o valor a ser descontado do imposto %*/
+	@Override
+	public double obterImposto() {
+		double tetoPrimeiraFaixa = 1200;
+		double porcentagemPrimeiraFaixa = .15;
+		double tetoSegundaFaixa = 2400;
+		double porcentagemSegundaFaixa = .275;		
+		double valorImposto = 0;
 		
-	
-	
-	
-	
+		
+		if(obterBaseCalculoComDesconto() <= tetoPrimeiraFaixa){
+			valorImposto = 0;
+		}else 
+			if(obterBaseCalculoComDesconto() > 12000 && obterBaseCalculoComDesconto() < tetoSegundaFaixa){
+				valorImposto = (obterBaseCalculoComDesconto() - tetoPrimeiraFaixa) * porcentagemPrimeiraFaixa;
+		}else{
+			valorImposto = (obterBaseCalculoComDesconto() - tetoSegundaFaixa) * porcentagemSegundaFaixa;
+		}
+		return valorImposto; 
+	}
 
+	
 }

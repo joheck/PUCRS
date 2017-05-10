@@ -14,24 +14,21 @@ public abstract class Declaracao {
 	}
 
 	/*Metodo fornece o valor a ser subtraido da base de calculo*/
-	public double obterValorDescontoBaseCalculo(double baseCalculo, double porCentDesconto){
+	public double obterValorDescontoBaseCalculo(){
+		double porCentDesconto = 0;
 		double porcentagem =  (porCentDesconto/100);
-		return baseCalculo * porcentagem;
+		return obterBaseDeCalculo() * porcentagem;
 	}
 
 	/*Metodo fornece base de calculo considerando o desconto*/
-	public double obterBaseCalculoComDesconto(double baseCalculo, double desconto){
-		double baseCalculoComDesconto = baseCalculo - desconto;
+	public double obterBaseCalculoComDesconto(){
+		double baseCalculoComDesconto = obterBaseDeCalculo() - obterValorDescontoBaseCalculo();
 		return baseCalculoComDesconto;
 	}
 
-	public double obterPorCentImposto(double baseCalculoComDesconto){
-		double porCentImp = 0;
-		return porCentImp;
+	public double obterImposto(){
+		double valor = 0;
+		return valor;
 	}
 	
-	public double obterValorImposto(double baseCaluloComDesconto, double porCentImposto){
-		double valorImposto = baseCaluloComDesconto * (porCentImposto/100);
-		return valorImposto;
-	}
 }

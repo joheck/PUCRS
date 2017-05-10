@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="238.0" prefWidth="397.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <TextField fx:id="fieldName" layoutX="89.0" layoutY="39.0" prefHeight="25.0" prefWidth="202.0" />
+      <Label layoutX="27.0" layoutY="41.0" prefHeight="21.0" prefWidth="62.0" text="Nome">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="75.0" text="CPF">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldCpf" layoutX="89.0" layoutY="73.0" prefHeight="25.0" prefWidth="202.0" />
+      <TextField fx:id="fieldAge" layoutX="89.0" layoutY="111.0" prefHeight="25.0" prefWidth="38.0" />
+      <Label layoutX="26.0" layoutY="115.0" text="Idade">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="22.0" layoutY="153.0" text="Declaração">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="60.0" layoutY="186.0" mnemonicParsing="false" text="Gerar Declaração">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="215.0" layoutY="186.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Limpar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <ToggleButtonGroup layoutX="127.0" layoutY="155.0" prefHeight="11.0" prefWidth="213.0" selectionType="SINGLE">
+          <toggles>
+            <RadioButton fx:id="radio" mnemonicParsing="false" prefHeight="12.0" prefWidth="91.0" text="Composta" />
+            <RadioButton mnemonicParsing="false" text="Simples" />
+          </toggles>
+      </ToggleButtonGroup>
+   </children>
+</AnchorPane>
