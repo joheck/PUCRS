@@ -9,7 +9,6 @@ public class Simplificada extends Declaracao {
 	@Override
 	 public double obterValorDescontoBaseCalculo() {
 		double desconto = 5.0;
-		System.out.println((obterBaseDeCalculo() * (desconto/100)));
 		return (obterBaseDeCalculo() * (desconto/100));		 
 	};
 	

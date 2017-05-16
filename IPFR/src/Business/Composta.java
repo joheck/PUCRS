@@ -1,4 +1,4 @@
-package Business;import com.sun.corba.se.impl.ior.ObjectKeyTemplateBase;
+package Business;
 
 public class Composta extends Declaracao{
 	private int idade, numDependentes;

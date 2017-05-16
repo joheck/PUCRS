@@ -1,7 +1,7 @@
 package Business;
 
-public abstract class Declaracao {
-	private double contribuicao, totalRendimentos;
+public  class Declaracao {
+	private double totalRendimentos, contribuicao ;
 
 	public Declaracao(double totalRendimentos, double contribuicao){
 		this.contribuicao = contribuicao;

@@ -9,8 +9,12 @@ import Business.Simplificada;
 
 public class TestSimplificada {
 
+	@Test
+	public void testValorDescontoBaseDeCalculo(){
+		Simplificada simp = new Simplificada(200, 100);
+		assertEquals(5, simp.obterValorDescontoBaseCalculo(), 0.01);
+	}
 
-	/*Testes Declaracao Simples*/
 	@Test
 	public void testobterValorDescontoBaseCalculo() {		
 		Simplificada simp = new Simplificada(200, 100);

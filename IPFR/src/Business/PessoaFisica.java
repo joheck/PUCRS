@@ -1,17 +1,52 @@
 package Business;
 
-import java.util.Date;
+
 
 public class PessoaFisica {
-	private String cpf, nome;
-	int idade;
-	Declaracao declaracao;
+	private String nome, cpf;
+	int idade, numeroDependentes;
+	public String getCpf() {
+		return cpf;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public int getNumeroDependentes() {
+		return numeroDependentes;
+	}
+
+	public static CalculoIRPF getDeclaracao() {
+		return declaracao;
+	}
+
+	static CalculoIRPF declaracao;
 	
-	public PessoaFisica(String cpf, String nome, int idade, Declaracao declaracao){
+	/*Simples*/
+	public PessoaFisica( String nome, String cpf, int idade, double totalRendimentos, double contribuicao){
 		this.cpf = cpf;
 		this.nome = nome;
 		this.idade = idade;
-		this.declaracao = declaracao;
+		this.declaracao = new CalculoIRPF(new Simplificada(totalRendimentos, contribuicao));
 	}
 	
+	/*Simples*/
+	public PessoaFisica( String nome, String cpf, int idade,  double totalRendimentos, double contribuicao, int numeroDependentes){
+		this.cpf = cpf;
+		this.nome = nome;
+		this.idade = idade;
+		this.numeroDependentes = numeroDependentes;
+		this.declaracao = new CalculoIRPF(new Composta(totalRendimentos, contribuicao, idade , numeroDependentes));
+	}
+	
+	@Override
+	public String toString() {
+		return "PessoaFisica [nome=" + nome + ", cpf=" + cpf + ", idade=" + idade + ", numeroDependentes="
+				+ numeroDependentes + "]";
+	}	
 }
