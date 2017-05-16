@@ -21,10 +21,12 @@ public class Main extends Application {
 
 	@FXML private TextField fieldName;
 	@FXML private TextField fieldCpf;
-	@FXML private TextField fieldAge;
-	@FXML private TextField fieldNumDep;
-	@FXML private RadioButton radioComp = new  RadioButton();	
+	@FXML private TextField fieldAge = new TextField();
+	@FXML private TextField fieldNumDep = new TextField();
+	@FXML private RadioButton radioComp = new  RadioButton();
+	
 	@FXML private RadioButton radioSimp = new RadioButton();
+
 	@FXML private Button buttonGenerate;
 	@FXML private Button buttonClear;
 	@FXML private TextField rendimentos;
@@ -39,7 +41,7 @@ public class Main extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("Window.fxml"));			
 			Scene scene = new Scene(root, 250, 350);
 			primaryStage.setResizable(false);
-			primaryStage.setTitle("Register");
+			primaryStage.setTitle("IRPF");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		}catch(Exception e){e.printStackTrace();
@@ -74,41 +76,47 @@ public class Main extends Application {
 
 	public void gerarDeclaracao(){
 		PessoaFisica pessoa = null;		
-			String nome = (String)this.fieldName.getText();
-			String cpf = (String)this.fieldCpf.getText();
-			int idade = Integer.valueOf(this.fieldAge.getText());
-			double rendimentos = Double.valueOf(this.rendimentos.getText());
-			double contribuicao = Double.valueOf(this.contribuicao.getText());		
-			int dependentes = Integer.valueOf(this.fieldNumDep.getText());
-
-			if(this.declaracao.equals("simplificada")){
+		String nome = (String)this.fieldName.getText();
+		String cpf = (String)this.fieldCpf.getText();
+		int idade = 0;
+		if(!this.fieldAge.getText().equals("")){
+		idade = Integer.valueOf(this.fieldAge.getText());
+		}
+		double rendimentos = Double.valueOf(this.rendimentos.getText());
+		double contribuicao = Double.valueOf(this.contribuicao.getText());		
+		int dependentes = 0;
+		if(!this.fieldNumDep.getText().equals("")){
+			dependentes = Integer.valueOf(this.fieldNumDep.getText());
+		}
+		if(this.declaracao.equals("simplificada")){
 			pessoa = new PessoaFisica(nome,cpf, idade, rendimentos, contribuicao);
-				
-			}else{
-				pessoa = new PessoaFisica(nome, cpf, idade, rendimentos, contribuicao, dependentes);
-			}
-			
-			this.fachada.dados.inserirPessoa(pessoa);
-			this.contador++;
-			mostrarTabela();
-			limpar();
+
+		}else{
+			pessoa = new PessoaFisica(nome, cpf, idade, rendimentos, contribuicao, dependentes);
+		}
+
+		this.fachada.dados.inserirPessoa(pessoa);
+		this.contador++;
+		mostrarTabela();
+		limpar();
+		this.radioSimp.setSelected(true);
 	}
 
 	public static void main (String args[]){
+		
 		launch(args);
 	}
 
 	public void setDeclaracaoSimp(){
 		this.declaracao = "simplificada";
-		System.out.println(this.declaracao);
+		this.fieldAge.setDisable(true);
+		this.fieldNumDep.setDisable(true);
 	}
 
 	public void setDeclaracaoComp(){
 		this.declaracao = "composta";
-		System.out.println(this.declaracao);
+		this.fieldAge.setDisable(false);
+		this.fieldNumDep.setDisable(false);
 	}
-
-
-
 
 }

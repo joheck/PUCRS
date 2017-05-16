@@ -13,8 +13,8 @@
       <Button fx:id="buttonClear" layoutX="171.0" layoutY="259.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
       <TextField fx:id="fieldName" layoutX="43.0" layoutY="21.0" promptText="Nome" />
       <TextField fx:id="fieldCpf" layoutX="43.0" layoutY="52.0" promptText="CPF" />
-      <TextField fx:id="fieldAge" layoutX="43.0" layoutY="82.0" promptText="Idade" />
-      <TextField fx:id="fieldNumDep" layoutX="43.0" layoutY="115.0" promptText="Numero dependentes" />
+      <TextField fx:id="fieldAge" layoutX="43.0" layoutY="82.0" promptText="Idade" disable="true" />
+      <TextField fx:id="fieldNumDep" layoutX="43.0" layoutY="115.0" promptText="Numero dependentes" disable="true"/>
       <TextField fx:id="rendimentos" layoutX="43.0" layoutY="149.0" promptText="Total Rendimentos" />
       <TextField fx:id="contribuicao" layoutX="43.0" layoutY="183.0" promptText="Contribuição" />
       <RadioButton fx:id="radioSimp" layoutX="12.0" layoutY="224.0" mnemonicParsing="false" selected="true" text="Simples" onAction="#setDeclaracaoSimp">
