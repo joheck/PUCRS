@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="298.0" prefWidth="237.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UInterface.Main">
+   <children>
+      <Button fx:id="buttonGenerate" layoutX="33.0" layoutY="259.0" mnemonicParsing="false" onAction="#gerarDeclaracao" prefHeight="25.0" prefWidth="126.0" text="Gravar dados" />
+      <Button fx:id="buttonClear" layoutX="171.0" layoutY="259.0" mnemonicParsing="false" onAction="#limpar" text="Limpar" />
+      <TextField fx:id="fieldName" layoutX="43.0" layoutY="21.0" promptText="Nome" />
+      <TextField fx:id="fieldCpf" layoutX="43.0" layoutY="52.0" promptText="CPF" />
+      <TextField fx:id="fieldAge" layoutX="43.0" layoutY="82.0" promptText="Idade" />
+      <TextField fx:id="fieldNumDep" layoutX="43.0" layoutY="115.0" promptText="Numero dependentes" />
+      <TextField fx:id="rendimentos" layoutX="43.0" layoutY="149.0" promptText="Total Rendimentos" />
+      <TextField fx:id="contribuicao" layoutX="43.0" layoutY="183.0" promptText="Contribuição" />
+      <RadioButton fx:id="radioSimp" layoutX="12.0" layoutY="224.0" mnemonicParsing="false" selected="true" text="Simples" onAction="#setDeclaracaoSimp">
+         <toggleGroup>
+            <ToggleGroup fx:id="Declaracao" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioComp" layoutX="112.0" layoutY="224.0" mnemonicParsing="false" text="Composta" toggleGroup="$Declaracao" onAction="#setDeclaracaoComp" />
+   </children>
+   <effect>
+      <Blend opacity="0.71" />
+   </effect>
+</AnchorPane>
