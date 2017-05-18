@@ -21,7 +21,7 @@ public class Agenda {
 		}
 	}
 
-	public String getTelefone(String nome){
+	public String getTelefonePorNome(String nome){
 
 		String numeroTelefone = "";
 
@@ -41,20 +41,18 @@ public class Agenda {
 		
 		Contatos aux = new Contatos("", "");
 		
-		for(int i = 0 ; i < contatosOrdem.size() ; i++){
-			
+		for(int i = 0 ; i < contatosOrdem.size() ; i++){			
 			aux = (Contatos) contatosOrdem.get(i); //corrente
 			
-			for(int j = i ; j < contatosOrdem.size() ; j++){
-				
+			for(int j = i ; j < contatosOrdem.size() ; j++){				
 				//identifica que é maior que o posterior
 				if(aux.getNome().length() > contatosOrdem.get(j).getNome().length()){					
 					Contatos aux2 = contatosOrdem.get(j); // copia o posterior					
 					contatosOrdem.set(j, aux); // adiciona o corrente (i) na posição do posterior (j) menor encontrado
-					contatosOrdem.set(i, aux2); // seta a posição corrente (i) com o valor do posterir (j) encontrado					
-										
+					contatosOrdem.set(i, aux2); // seta a posição corrente (i) com o valor do posterir (j) encontrado											
 				}				
-			}			
+			}	
+			this.contatos = contatosOrdem;
 		}
 	}
 	
