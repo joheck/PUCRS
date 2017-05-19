@@ -5,9 +5,9 @@ import java.util.Set;
 
 import javax.swing.JOptionPane;
 
-public class Agenda {
+public class  Agenda {
 
-	ArrayList <Contatos> contatos = new ArrayList<>();
+	public static ArrayList <Contatos> contatos = new ArrayList<>();
 
 	public boolean armazenarContato(String nome, String numeroTelefone){
 
