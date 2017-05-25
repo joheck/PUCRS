@@ -7,6 +7,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -18,6 +20,11 @@ public class AgendaGUI extends Application {
 	@FXML private TextField nome;
 	@FXML private TextField telefone;
 	@FXML private Button gravar;
+	@FXML private Label pLabelnome;
+	@FXML private TextField pFieldNome;
+	@FXML private Button pButtonPesquisar;
+	@FXML private RadioButton pesqPorNome;
+	@FXML private RadioButton pesqTodos;
 	
 	Controller controller = new Controller();
 	
@@ -26,6 +33,8 @@ public class AgendaGUI extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Agenda.fxml"));
 			Scene scene = new Scene(root,300,200);
+			primaryStage.setTitle("Agenda");
+			primaryStage.setIconified(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();		
 		} catch(Exception e) {
@@ -43,7 +52,12 @@ public class AgendaGUI extends Application {
 		this.nome.setText("");
 		this.telefone.setText("");
 	}
+	
+	public void getTelefonePorNome(){
+		controller.getTelefonePorNome(this.pFieldNome.getText());
 		
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

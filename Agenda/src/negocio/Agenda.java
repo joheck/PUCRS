@@ -23,8 +23,7 @@ public class  Agenda implements ContatosDAO{
 		return co.armazenarContato(id_contatos, nome, numeroTelefone);		
 	}
 	@Override
-	public String getTelefonePorNome(String nome) {
-		
+	public String getTelefonePorNome(String nome) {		
 		return co.getTelefonePorNome(nome);
 	}
 	@Override
