@@ -1,9 +1,7 @@
 package negocio;
 
 public class Contatos {
-	
-	
-	
+		
 	private String nome;
 	private String numeroTelefone;
 	
