@@ -21,7 +21,9 @@ public class AgendaGUI extends Application {
 	@FXML private TextField telefone;
 	@FXML private Button gravar;
 	@FXML private Label pLabelnome;
+	@FXML private Label pLabeltelefone;
 	@FXML private TextField pFieldNome;
+	@FXML private TextField pFieldTelefone;
 	@FXML private Button pButtonPesquisar;
 	@FXML private RadioButton pesqPorNome;
 	@FXML private RadioButton pesqTodos;
