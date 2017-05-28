@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import negocio.Agenda;
 import negocio.Contatos;
 
 public class ContatosDAOoracle implements ContatosDAO {
@@ -18,28 +19,44 @@ public class ContatosDAOoracle implements ContatosDAO {
 		this.connection = ConnectionFactory.getConnection();		
 	}
 
+	public int contId(){
+
+		int cont = 0;
+		String sql = "SELECT * FROM CONTATOS";		
+		try {
+			PreparedStatement stmt = this.connection.prepareStatement(sql);
+			ResultSet result = stmt.executeQuery();	
+			while(result.next()){
+				result.getString("nome");
+				cont++;			
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return cont+1;		
+	}
+
 	public  Connection getConnection(){
 		return connection;
 	}
 
 	@Override
-	public boolean armazenarContato(int id_contatos, String nome, String numeroTelefone) {
+	public void armazenarContato(String nome, String numeroTelefone) {
 		String sql = "insert into contatos" +
 				"(id_contatos, nome, telefone) "+
 				"values (?, ?, ?)";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
-			stmt.setInt(1, id_contatos);
-			stmt.setString(2, nome);
+			stmt.setInt(1, contId());
+			stmt.setString(2, nome.toUpperCase());
 			stmt.setString(3, numeroTelefone);
 			stmt.execute();
 			stmt.close();
-			JOptionPane.showMessageDialog(null, "Contato inserido com sucesso!", "/Persistencia", 0);
+			JOptionPane.showMessageDialog(null, "Contato inserido com sucesso!", "Persistencia", 1);
 			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();					
 		}
-		return false;
 	}
 
 	@Override
@@ -48,7 +65,7 @@ public class ContatosDAOoracle implements ContatosDAO {
 				+ "CONTATOS C WHERE C.NOME = ? ";			
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
-			stmt.setString(1, nome);
+			stmt.setString(1, nome.toUpperCase());
 			ResultSet result =  stmt.executeQuery();
 			result.next();
 			return result.getString("telefone");

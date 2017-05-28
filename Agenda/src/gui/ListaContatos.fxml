@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="237.0" prefWidth="183.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ControllerLista">
+   <children>
+      <Pane prefHeight="237.0" prefWidth="190.0">
+         <children>
+            <TableView fx:id="contatos" prefHeight="237.0" prefWidth="189.0">
+              <columns>
+                <TableColumn id="listNome" fx:id="listNome" prefWidth="95.0" text="Nome" />
+                <TableColumn id="listTelefone" fx:id="listTelefone" prefWidth="92.0" text="Telefone" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

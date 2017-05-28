@@ -1,5 +1,7 @@
 package gui;
 
+import javax.swing.JOptionPane;
+
 import negocio.Agenda;
 
 public class Controller {
@@ -8,8 +10,9 @@ public class Controller {
 	
 	public void gravar(String nome, String telefone){
 		if(!nome.equals("") && !telefone.equals("")){
-			agenda.armazenarContato(agenda.getIdContatos(), nome, telefone);
-
+			agenda.armazenarContato(nome, telefone);
+		}else{
+			JOptionPane.showMessageDialog(null, "Preencher todos os campos", "View", 0);
 		}
 	}
 

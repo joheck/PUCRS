@@ -13,9 +13,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="204.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AgendaGUI">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="194.0" prefWidth="323.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AgendaGUI">
    <children>
-      <TabPane layoutY="-4.0" prefHeight="203.0" prefWidth="314.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane layoutX="7.0" prefHeight="194.0" prefWidth="310.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Cadastro">
             <content>
@@ -28,12 +28,14 @@
                               <TextField fx:id="nome" layoutX="78.0" layoutY="10.0" style="-fx-background-color: green;">
                                  <font>
                                     <Font size="13.0" />
-                                 </font></TextField>
+                                 </font>
+                              </TextField>
                               <TextField fx:id="telefone" layoutX="78.0" layoutY="43.0" style="-fx-background-color: green;" />
                               <Button fx:id="gravar" layoutX="104.0" layoutY="79.0" mnemonicParsing="false" onAction="#gravar" style="-fx-border-color: black; -fx-background-color: gray;" text="Gravar" textOverrun="LEADING_ELLIPSIS">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
-                                 </font></Button>
+                                 </font>
+                              </Button>
                            </children>
                            <effect>
                               <Bloom />
@@ -45,21 +47,21 @@
           </Tab>
           <Tab text="Obter Informações">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="97.0" prefWidth="403.0">
+              <AnchorPane id="ancora" minHeight="0.0" minWidth="0.0" prefHeight="280.0" prefWidth="310.0">
                      <children>
-                        <Pane layoutX="17.0" layoutY="17.0" prefHeight="137.0" prefWidth="282.0" style="-fx-border-color: black;">
+                        <Pane layoutX="12.0" layoutY="19.0" prefHeight="137.0" prefWidth="290.0" style="-fx-border-color: black;">
                            <children>
-                              <RadioButton id="pesqPorNome" fx:id="pesqPorNome" layoutX="14.0" layoutY="7.0" mnemonicParsing="false" onAction="#radios" text="Pesquisar Telefone" selected="true">
+                              <RadioButton id="pesqPorNome" fx:id="pesqPorNome" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#radios" prefHeight="20.0" prefWidth="127.0" selected="true" style="-fx-background-color: gray;" text="Pesquisar Telefone">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="pesquisa" />
                                  </toggleGroup>
                               </RadioButton>
-                              <RadioButton id="pesqTodos" fx:id="pesqTodos" layoutX="163.0" layoutY="7.0" mnemonicParsing="false" onAction="#radios" text="Listar ordenado por nome" toggleGroup="$pesquisa" />
+                              <RadioButton id="pesqTodos" fx:id="pesqTodos" layoutX="136.0" layoutY="7.0" mnemonicParsing="false" onAction="#radios" prefHeight="20.0" prefWidth="151.0" style="-fx-background-color: gray;" text="Listar todos os contatos" toggleGroup="$pesquisa" />
                               <TextField id="pFieldNome" fx:id="pFieldNome" layoutX="74.0" layoutY="44.0" />
                               <Button id="pButtonPesquisar" fx:id="pButtonPesquisar" layoutX="74.0" layoutY="106.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="25.0" prefWidth="124.0" text="Pesquisar" />
                               <Line endX="150.0" layoutX="126.0" layoutY="31.0" startX="-120.0" />
-                              <TextField id="pFieldTelefone" fx:id="pFieldTelefone" layoutX="74.0" layoutY="74.0" visible="false"/>
-                              <Label id="pLabeltelefone" fx:id="pLabeltelefone" layoutX="14.0" layoutY="78.0" text="Telefone" visible="false"/>
+                              <TextField id="pFieldTelefone" fx:id="pFieldTelefone" layoutX="74.0" layoutY="74.0" visible="false" />
+                              <Label id="pLabeltelefone" fx:id="pLabeltelefone" layoutX="14.0" layoutY="78.0" text="Telefone" visible="false" />
                               <Label id="pLabelnome" fx:id="pLabelnome" layoutX="14.0" layoutY="48.0" text="Nome" />
                             </children></Pane>
                      </children>
@@ -68,5 +70,6 @@
           </Tab>
         </tabs>
       </TabPane>
+      <AnchorPane layoutX="38.0" layoutY="209.0" prefHeight="171.0" prefWidth="152.0" />
    </children>
 </AnchorPane>
