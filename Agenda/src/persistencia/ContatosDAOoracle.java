@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import negocio.Agenda;
+import gui.ContatosView;
 import negocio.Contatos;
 
 public class ContatosDAOoracle implements ContatosDAO {
@@ -47,13 +47,15 @@ public class ContatosDAOoracle implements ContatosDAO {
 				"values (?, ?, ?)";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
-			stmt.setInt(1, contId());
+			System.out.println(this.getContatosOrdemAlfabetica().size()+1);
+			stmt.setInt(1, contId()+1);
 			stmt.setString(2, nome.toUpperCase());
 			stmt.setString(3, numeroTelefone);
 			stmt.execute();
 			stmt.close();
 			JOptionPane.showMessageDialog(null, "Contato inserido com sucesso!", "Persistencia", 1);
 			stmt.close();
+			
 		} catch (SQLException e) {
 			e.printStackTrace();					
 		}
@@ -76,9 +78,9 @@ public class ContatosDAOoracle implements ContatosDAO {
 	}
 
 	@Override
-	public ArrayList<Contatos> getContatosOrdemAlfabetica() {
+	public ArrayList<ContatosView> getContatosOrdemAlfabetica() {
 
-		ArrayList<Contatos> contatos = new ArrayList<Contatos>();		
+		ArrayList<ContatosView> contatos = new ArrayList<ContatosView>();		
 		String sql = "SELECT * FROM CONTATOS ORDER BY NOME";
 		try {
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
@@ -87,7 +89,7 @@ public class ContatosDAOoracle implements ContatosDAO {
 			while(result.next()){				
 				String nome = result.getString("nome");
 				String telefone = result.getString("telefone");
-				contatos.add(new Contatos(nome, telefone));				
+				contatos.add(new ContatosView(nome, telefone));				
 			}			
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -20,14 +20,11 @@ public class ContatosView {
 			this.telefone.set(telefone);
 		}
 
-		public SimpleStringProperty getNome() {
-			return nome;
+		public String getNome() {
+			return nome.get();
 		}
 
-		public SimpleStringProperty getTelefone() {
-			return telefone;
+		public String getTelefone() {
+			return telefone.get();
 		}
-		
-		
-	
 }

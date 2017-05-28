@@ -1,6 +1,4 @@
 package gui;
-
-
 import javax.swing.JOptionPane;
 
 import javafx.application.Application;
@@ -15,9 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-
-
-
 public class AgendaGUI extends Application {
 
 	@FXML private TextField nome;
@@ -30,7 +25,6 @@ public class AgendaGUI extends Application {
 	@FXML private Button pButtonPesquisar;
 	@FXML private RadioButton pesqPorNome;
 	@FXML private RadioButton pesqTodos;
-	
 
 	Controller controller = new Controller();
 
@@ -58,9 +52,6 @@ public class AgendaGUI extends Application {
 		}catch(Exception e ){
 			e.printStackTrace();
 		}
-		
-		
-
 	}
 
 	public void gravar(){
@@ -131,7 +122,6 @@ public class AgendaGUI extends Application {
 			limpar();
 			this.pFieldNome.requestFocus();
 		}
-
 	}
 
 	public static void main(String[] args) {

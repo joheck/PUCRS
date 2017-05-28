@@ -1,10 +1,8 @@
 package negocio;
 
 import java.util.ArrayList;
-import java.util.Set;
 
-import javax.swing.JOptionPane;
-
+import gui.ContatosView;
 import persistencia.ContatosDAO;
 import persistencia.ContatosDAOoracle;
 
@@ -21,17 +19,20 @@ public class  Agenda implements ContatosDAO{
 			e.printStackTrace();
 		}
 	}
+	
 	@Override
 	public void armazenarContato(String nome, String numeroTelefone) {
 		co.armazenarContato(nome, numeroTelefone);		
 
 	}
+	
 	@Override
 	public String getTelefonePorNome(String nome) {		
 		return co.getTelefonePorNome(nome);
 	}
+	
 	@Override
-	public ArrayList<Contatos> getContatosOrdemAlfabetica() {
+	public ArrayList<ContatosView> getContatosOrdemAlfabetica() {
 		return co.getContatosOrdemAlfabetica();
 	}
 }

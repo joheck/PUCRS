@@ -25,12 +25,12 @@
                            <children>
                               <Label layoutX="16.0" layoutY="14.0" text="Nome" />
                               <Label layoutX="16.0" layoutY="47.0" text="Telefone" />
-                              <TextField fx:id="nome" layoutX="78.0" layoutY="10.0" style="-fx-background-color: green;">
+                              <TextField fx:id="nome" layoutX="78.0" layoutY="10.0" prefHeight="29.0" prefWidth="152.0" style="-fx-background-color: gray;">
                                  <font>
                                     <Font size="13.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="telefone" layoutX="78.0" layoutY="43.0" style="-fx-background-color: green;" />
+                              <TextField fx:id="telefone" layoutX="78.0" layoutY="43.0" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: gray;" />
                               <Button fx:id="gravar" layoutX="104.0" layoutY="79.0" mnemonicParsing="false" onAction="#gravar" style="-fx-border-color: black; -fx-background-color: gray;" text="Gravar" textOverrun="LEADING_ELLIPSIS">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />

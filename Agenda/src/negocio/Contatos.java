@@ -25,5 +25,4 @@ public class Contatos {
 	public String getNome(){
 		return this.nome;
 	}	  
-	
 }
