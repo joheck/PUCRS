@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Tue Jun 13 20:14:48 BRT 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-015c-a3bc-f325-0000072853c8 
-on database directory H:\git\PUCRS\Leilao\derbyDB  with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
-Loaded from file:/H:/git/PUCRS/Leilao/derby.jar
+Wed Jun 21 08:29:32 BRT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-015c-ca6a-242a-000003553410 
+on database directory C:\Users\JOO_F\git\PUCRS\Leilao\derbyDB  with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/C:/Users/JOO_F/git/PUCRS/Leilao/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_121-b13
-user.dir=H:\git\PUCRS\Leilao
+user.dir=C:\Users\JOO_F\git\PUCRS\Leilao
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
