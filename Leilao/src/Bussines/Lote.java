@@ -1,24 +1,15 @@
 package Bussines;
 /**
 *
-* @author João França
+* @author João França 
 */
 public class Lote {
 	
-	private double preco;
+	private int id;
 	private Produto[] produtos;
 	
-	public Lote(double preco, Produto[] produtos) {
-		this.preco = preco;
+	public Lote(Produto[] produtos) {
 		this.produtos = produtos;
-	}
-	
-	public double getPreco() {
-		return preco;
-	}
-	
-	public void setPreco(double preco) {
-		this.preco = preco;
 	}
 	
 	public Produto[] getProdutos() {
@@ -27,6 +18,14 @@ public class Lote {
 	
 	public void setProdutos(Produto[] produtos) {
 		this.produtos = produtos;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 		
 }

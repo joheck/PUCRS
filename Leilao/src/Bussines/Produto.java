@@ -5,37 +5,44 @@ package Bussines;
 */
 public class Produto {
 	
-	private Categoria categ;
-	private String descBreve;
+	private final int id;
+	private String descSimples;
 	private String descCompleta;
+	private CategoriaProd categoria;	
 	
-	public Produto(Categoria categ, String descBreve, String descCompleta) {
-		this.categ = categ;
-		this.descBreve = descBreve;
-		this.descCompleta = descCompleta;
+	public Produto(int id, String descSimples, String descCompleta,CategoriaProd categoria){
+		this.id = id;
+		this.setDescSimples(descSimples);
+		this.setDescCompleta(descCompleta);
+		this.setCategoria(categoria);
 	}
-	
-	public Categoria getCateg() {
-		return categ;
+
+	public int getId() {
+		return id;
 	}
-	
-	public void setCateg(Categoria categ) {
-		this.categ = categ;
+
+	public String getDescSimples() {
+		return descSimples;
 	}
-	
-	public String getDescBreve() {
-		return descBreve;
+
+	public void setDescSimples(String descSimples) {
+		this.descSimples = descSimples;
 	}
-	
-	public void setDescBreve(String descBreve) {
-		this.descBreve = descBreve;
-	}
-	
+
 	public String getDescCompleta() {
 		return descCompleta;
 	}
-	
+
 	public void setDescCompleta(String descCompleta) {
 		this.descCompleta = descCompleta;
 	}
+
+	public CategoriaProd getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(CategoriaProd categoria) {
+		this.categoria = categoria;
+	}
+	
 }
